@@ -11,7 +11,7 @@ load_dotenv()
 
 # --- Конфигурация ---
 VK_TOKEN = os.getenv("VK_ACCESS_TOKEN")
-COMMUNITIES = [-12345678, -87654321]  # сюда вставь свои ID
+COMMUNITIES = [-12345678, -87654321]  #ID сообществ
 API_VERSION = "5.131"
 POSTS_PER_REQUEST = 20
 MAX_POSTS_PER_COMMUNITY = 30
@@ -63,7 +63,7 @@ def parse_post(post: dict):
     pub_date = datetime.fromtimestamp(post["date"]).strftime("%Y-%m-%d")
     time_str = extract_time(text)
     date_str = extract_date_text(text) or pub_date
-    # очень простой поиск места
+    #простой поиск места
     place_str = None
     for kw in ["место", "зал", "аудитория", "корпус"]:
         pos = text.lower().find(kw)
